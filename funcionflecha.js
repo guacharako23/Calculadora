@@ -1,46 +1,46 @@
-let num1 = "";
-let num2 = "";
-let operator = "";
+let numero_1 = "";
+let numero_2 = "";
+let operador = "";
 
-const insert = (num) => {
-	if (operator === "") {
-		num1 += num;
-		document.getElementById("result").value = num1;
+const insertar = (num) => {
+	if (operador === "") {
+		numero_1 += num;
+		document.getElementById("resultado").value = numero_1;
 	} else {
-		num2 += num;
-		document.getElementById("result").value = num2;
+		numero_2 += num;
+		document.getElementById("resultado").value = numero_2;
 	}
 };
 
-const clearResult = () => {
-	num1 = "";
-	num2 = "";
-	operator = "";
-	document.getElementById("result").value = "";
+const clearResultado = () => {
+	numero_1 = "";
+	numero_2 = "";
+	operador = "";
+	document.getElementById("resultado").value = "";
 };
 
-const operation = (op) => {
-	operator = op;
+const operacion = (op) => {
+	operador = op;
 };
 
-const equal = () => {
-	let result = 0;
-	switch (operator) {
+const igual = () => {
+	let resultado = 0;
+	switch (operador) {
 		case "+":
-			result = parseInt(num1) + parseInt(num2);
+			resultado = parseInt(numero_1) + parseInt(numero_2);
 			break;
 		case "-":
-			result = num1 - num2;
+			resultado = numero_1 - numero_2;
 			break;
 		case "*":
-			result = num1 * num2;
+			resultado = numero_1 * numero_2;
 			break;
 		case "/":
-			result = num1 / num2;
+			resultado = numero_1 / numero_2;
 			break;
 	}
-	document.getElementById("result").value = result;
-	num1 = result.toString();
-	num2 = "";
-	operator = "";
+	document.getElementById("resultado").value = resultado;
+	numero_1 = resultado.toString();
+	numero_2 = "";
+	operador = "";
 };
